@@ -1,0 +1,88 @@
+:root {
+    --gold: #D4AF37;
+    --gold-bright: #F5D76E;
+    --charcoal: #0a0a0a;
+    --oak: #1a1510;
+}
+
+body {
+    background-color: var(--charcoal);
+    color: #e5e7eb;
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
+.bg-gold {
+    background-color: var(--gold);
+}
+
+.border-gold {
+    border-color: var(--gold);
+}
+
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bg-oak {
+    background-color: #0d0d0d;
+}
+
+/* Custom Scrollbar - High End Theme */
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: var(--charcoal);
+}
+::-webkit-scrollbar-thumb {
+    background: #222;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+/* Luxury Card Hover */
+.group {
+    transition: all 0.5s ease;
+}
+
+/* Smooth selection colors */
+::selection {
+    background: var(--gold);
+    color: black;
+}
+
+/* Map grayscale refined */
+iframe {
+    filter: grayscale(1) invert(0.9) contrast(1.2) brightness(0.8);
+}
+
+/* Line Clamp for reviews */
+.line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.float-icon {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Force dark gradient for text readability on imagery */
+.text-shadow-lg {
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
