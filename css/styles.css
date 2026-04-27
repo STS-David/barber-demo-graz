@@ -378,12 +378,17 @@ p {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    180deg,
-    rgba(15, 13, 11, 0.94) 0%,
-    rgba(15, 13, 11, 0.9) 38%,
-    rgba(15, 13, 11, 0.84) 68%,
-    rgba(15, 13, 11, 0.88) 100%
-  );
+      90deg,
+      rgba(15, 13, 11, 0.92) 0%,
+      rgba(15, 13, 11, 0.82) 42%,
+      rgba(15, 13, 11, 0.72) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(15, 13, 11, 0.76) 0%,
+      rgba(15, 13, 11, 0.82) 55%,
+      rgba(15, 13, 11, 0.94) 100%
+    );
   z-index: 1;
   pointer-events: none;
 }
@@ -393,7 +398,7 @@ p {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 70% 40%, rgba(216, 177, 95, 0.05), transparent 45%);
+    radial-gradient(circle at 62% 42%, rgba(216, 177, 95, 0.04), transparent 42%);
   z-index: 1;
   pointer-events: none;
 }
@@ -1351,6 +1356,21 @@ p {
 
   .hero {
     padding-block: 2.75rem 4.5rem;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(15, 13, 11, 0.88) 0%,
+        rgba(15, 13, 11, 0.86) 52%,
+        rgba(15, 13, 11, 0.96) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(15, 13, 11, 0.88) 0%,
+        rgba(15, 13, 11, 0.72) 100%
+      );
   }
 
   .brand-mark__copy strong {
