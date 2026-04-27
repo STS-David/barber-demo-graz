@@ -373,12 +373,27 @@ p {
   align-items: center;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 10, 5, 0.85) 0%,
+    rgba(40, 20, 10, 0.65) 40%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
 .hero::after {
   content: "";
   position: absolute;
   inset: auto 0 0;
   height: 14rem;
   background: linear-gradient(180deg, transparent, rgba(15, 13, 11, 0.95));
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -392,17 +407,10 @@ p {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  filter: saturate(0.72) brightness(0.48) contrast(1.05);
 }
 
 .hero__background::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 72% 28%, rgba(179, 122, 59, 0.22), transparent 24%),
-    linear-gradient(90deg, rgba(15, 13, 11, 0.86) 0%, rgba(15, 13, 11, 0.58) 42%, rgba(15, 13, 11, 0.74) 100%),
-    linear-gradient(180deg, rgba(15, 13, 11, 0.48) 0%, rgba(15, 13, 11, 0.8) 100%);
+  content: none;
 }
 
 .hero__grid,
@@ -413,7 +421,7 @@ p {
 
 .hero__grid {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   justify-items: center;
 }
@@ -421,7 +429,7 @@ p {
 .hero__content,
 .hero__visual {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero__content {
@@ -482,6 +490,7 @@ p {
 .hero-status__copy {
   display: grid;
   gap: 0.2rem;
+  min-width: 0;
 }
 
 .hero-status__eyebrow {
@@ -511,6 +520,12 @@ p {
 
 .hero-status__text {
   max-width: 100%;
+  text-wrap: balance;
+}
+
+.hero-status__text .status {
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .hero-status.is-open .hero-status__copy strong {
@@ -1421,17 +1436,6 @@ p {
     min-height: auto;
   }
 
-  .hero__background img {
-    filter: saturate(0.82) brightness(0.72) contrast(1.03);
-  }
-
-  .hero__background::after {
-    background:
-      radial-gradient(circle at 72% 28%, rgba(179, 122, 59, 0.16), transparent 24%),
-      linear-gradient(90deg, rgba(15, 13, 11, 0.64) 0%, rgba(15, 13, 11, 0.34) 42%, rgba(15, 13, 11, 0.58) 100%),
-      linear-gradient(180deg, rgba(15, 13, 11, 0.28) 0%, rgba(15, 13, 11, 0.6) 100%);
-  }
-
   .hero__content {
     width: 100%;
     gap: 1rem;
@@ -1471,11 +1475,13 @@ p {
   .hero-status {
     padding: 0.85rem 0.95rem;
     align-items: center;
+    max-width: 260px;
   }
 
   .hero-status__copy strong {
     font-size: 0.84rem;
-    white-space: nowrap;
+    white-space: normal;
+    line-height: 1.25;
   }
 
   .trust-line {
