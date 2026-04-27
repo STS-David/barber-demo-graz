@@ -1422,14 +1422,14 @@ p {
   }
 
   .hero__background img {
-    filter: saturate(0.78) brightness(0.62) contrast(1.02);
+    filter: saturate(0.82) brightness(0.72) contrast(1.03);
   }
 
   .hero__background::after {
     background:
-      radial-gradient(circle at 72% 28%, rgba(179, 122, 59, 0.18), transparent 24%),
-      linear-gradient(90deg, rgba(15, 13, 11, 0.72) 0%, rgba(15, 13, 11, 0.42) 42%, rgba(15, 13, 11, 0.66) 100%),
-      linear-gradient(180deg, rgba(15, 13, 11, 0.34) 0%, rgba(15, 13, 11, 0.68) 100%);
+      radial-gradient(circle at 72% 28%, rgba(179, 122, 59, 0.16), transparent 24%),
+      linear-gradient(90deg, rgba(15, 13, 11, 0.64) 0%, rgba(15, 13, 11, 0.34) 42%, rgba(15, 13, 11, 0.58) 100%),
+      linear-gradient(180deg, rgba(15, 13, 11, 0.28) 0%, rgba(15, 13, 11, 0.6) 100%);
   }
 
   .hero__content {
@@ -1470,11 +1470,12 @@ p {
 
   .hero-status {
     padding: 0.85rem 0.95rem;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .hero-status__copy strong {
-    font-size: 0.92rem;
+    font-size: 0.84rem;
+    white-space: nowrap;
   }
 
   .trust-line {
