@@ -85,14 +85,14 @@ function formatHeroStatusForViewport(status) {
   }
 
   if (status.message.includes("heute wieder ab")) {
-    return status.message.replace("Gerade geschlossen - heute wieder ab ", "Geschlossen - ab ");
+    return status.message.replace("Gerade geschlossen - heute wieder ab ", "Geschlossen · ");
   }
 
   if (status.message.includes("wieder morgen ab")) {
-    return status.message.replace("Gerade geschlossen - wieder morgen ab ", "Geschlossen - morgen ");
+    return status.message.replace("Gerade geschlossen - wieder morgen ab ", "Geschlossen · morgen ");
   }
 
-  return status.message.replace("Gerade geschlossen - wieder ", "Geschlossen - ");
+  return status.message.replace("Gerade geschlossen - wieder ", "Geschlossen · ");
 }
 
 function formatClosedStatusHtml(message) {
