@@ -1421,6 +1421,17 @@ p {
     min-height: auto;
   }
 
+  .hero__background img {
+    filter: saturate(0.78) brightness(0.62) contrast(1.02);
+  }
+
+  .hero__background::after {
+    background:
+      radial-gradient(circle at 72% 28%, rgba(179, 122, 59, 0.18), transparent 24%),
+      linear-gradient(90deg, rgba(15, 13, 11, 0.72) 0%, rgba(15, 13, 11, 0.42) 42%, rgba(15, 13, 11, 0.66) 100%),
+      linear-gradient(180deg, rgba(15, 13, 11, 0.34) 0%, rgba(15, 13, 11, 0.68) 100%);
+  }
+
   .hero__content {
     width: 100%;
     gap: 1rem;
