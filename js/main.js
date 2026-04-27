@@ -77,29 +77,11 @@ function getHeroStatus(location, now = new Date()) {
   };
 }
 
-function formatHeroStatusForViewport(status) {
-  if (window.innerWidth > 575.98) return status.message;
-
-  if (status.isOpen) {
-    return status.message.replace("Jetzt geoeffnet - bis ", "Geoeffnet bis ");
-  }
-
-  if (status.message.includes("heute wieder ab")) {
-    return status.message.replace("Gerade geschlossen - heute wieder ab ", "Geschlossen · ");
-  }
-
-  if (status.message.includes("wieder morgen ab")) {
-    return status.message.replace("Gerade geschlossen - wieder morgen ab ", "Geschlossen · morgen ");
-  }
-
-  return status.message.replace("Gerade geschlossen - wieder ", "Geschlossen · ");
-}
-
-function formatClosedStatusHtml(message) {
-  let html = message;
-  html = html.replace("Gerade geschlossen", 'Gerade <span class="status">geschlossen</span>');
-  html = html.replace(/^Geschlossen/, '<span class="status">Geschlossen</span>');
-  return html;
+function buildStatusLineHtml(status) {
+  return `
+    <span class="dot" aria-hidden="true"></span>
+    <span>${status.message}</span>
+  `;
 }
 
 function initMobileNav() {
@@ -155,17 +137,9 @@ function initHeroStatus() {
 
   const updateStatus = () => {
     const status = getHeroStatus(featuredLocation);
-    const formattedStatus = formatHeroStatusForViewport(status);
-
-    if (status.isOpen) {
-      statusText.textContent = formattedStatus;
-    } else {
-      statusText.innerHTML = formatClosedStatusHtml(formattedStatus);
-    }
-
+    statusText.innerHTML = buildStatusLineHtml(status);
     statusCard.classList.toggle("is-open", status.isOpen);
     statusCard.classList.toggle("is-closed", !status.isOpen);
-    statusText.style.setProperty("--typing-width", `${statusText.scrollWidth}px`);
   };
 
   updateStatus();
